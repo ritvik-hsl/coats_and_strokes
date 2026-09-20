@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QR Code — Coats & Strokes</title>
+<link rel="icon" href="data:," />
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<style>
+  :root {
+    --bg: #0f0f10;
+    --card: #1a1a1c;
+    --text: #f5f5f5;
+    --muted: #a1a1a6;
+    --accent: #e5b567;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px;
+  }
+  .page {
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+  }
+  h1 { font-size: 20px; margin: 0 0 8px; }
+  p.url {
+    color: var(--muted);
+    font-size: 13px;
+    word-break: break-all;
+    margin: 0 0 24px;
+  }
+  #qr {
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    display: inline-block;
+  }
+  #qr canvas { display: block; }
+  .btn {
+    margin-top: 24px;
+    display: inline-block;
+    background: var(--accent);
+    color: #1a1a1c;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  footer {
+    margin-top: 32px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <h1>Your QR code</h1>
+    <p class="url" id="target-url"></p>
+    <div id="qr"></div>
+    <div>
+      <button class="btn" id="download">Download PNG</button>
+    </div>
+    <footer>
+      This QR always points to this site's home page.<br>
+      Update the links on the page any time — the QR code<br>never needs to change.
+    </footer>
+  </div>
+
+  <script>
+    // Encode this deployment's own home page, so the QR is always
+    // correct no matter what domain it ends up hosted on.
+    // Override with ?url=https://example.com if you ever need to.
+    const params = new URLSearchParams(location.search);
+    const target = params.get("url") || (location.origin + "/");
+
+    document.getElementById("target-url").textContent = target;
+
+    const canvas = document.createElement("canvas");
+    document.getElementById("qr").appendChild(canvas);
+
+    QRCode.toCanvas(canvas, target, { width: 280, margin: 1 }, (err) => {
+      if (err) console.error(err);
+    });
+
+    document.getElementById("download").addEventListener("click", () => {
+      const link = document.createElement("a");
+      link.download = "coats-and-strokes-qr.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
+  </script>
+</body>
+</html>
