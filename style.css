@@ -41,7 +41,7 @@ a { color: inherit; }
 }
 
 /* ---------- shared card look ---------- */
-.hero-card, .gallery-card, .links-card, .contact-card {
+.hero-card, .links-card, .contact-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
   position: relative;
@@ -117,76 +117,6 @@ a { color: inherit; }
   right: -6px;
   width: 110px;
   opacity: 0.55;
-}
-
-.hero-photo {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, var(--pink), var(--purple-deep));
-  position: relative;
-}
-
-.hero-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* generic "no image yet" placeholder state */
-.photo.no-image img,
-.hero-photo.no-image img {
-  display: none;
-}
-
-.photo.no-image::after,
-.hero-photo.no-image::after {
-  content: attr(data-placeholder);
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 14px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: rgba(21, 19, 15, 0.75);
-  background: repeating-linear-gradient(
-    135deg,
-    rgba(255,255,255,0.35),
-    rgba(255,255,255,0.35) 10px,
-    rgba(255,255,255,0.15) 10px,
-    rgba(255,255,255,0.15) 20px
-  );
-}
-
-/* ---------- gallery ---------- */
-.gallery-card {
-  background: var(--paper);
-  padding: 16px;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.photo {
-  border-radius: 16px;
-  overflow: hidden;
-  aspect-ratio: 1 / 1;
-  background: linear-gradient(135deg, var(--purple-deep), var(--pink));
-  position: relative;
-}
-
-.photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 /* ---------- links ---------- */
@@ -345,8 +275,3 @@ a { color: inherit; }
   color: rgba(21, 19, 15, 0.6);
 }
 
-@media (min-width: 540px) {
-  .hero-card { flex-direction: row; align-items: stretch; }
-  .hero-inner { flex: 1 1 55%; }
-  .hero-photo { flex: 1 1 45%; aspect-ratio: auto; }
-}
