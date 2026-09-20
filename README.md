@@ -19,10 +19,9 @@ else), you edit this project and redeploy. The QR stays valid forever.
 - **Instagram URL** — ✅ set to `https://instagram.com/coatsandstrokes`
 - **YouTube URL** — ✅ set to `https://www.youtube.com/@coatsandstrokes`
 - **Phone number** — ✅ set to `+91 63534 93686`
-- **Email address** — still a placeholder: `hello@coatsandstrokes.example`
+- **Email address** — ✅ set to `coatsandstrokes@gmail.com`
 
-Remaining placeholders are marked with `TODO` comments in `index.html` —
-search for `TODO` to find each spot.
+All contact details and links are now real.
 
 ## Updating links/contact info later
 
