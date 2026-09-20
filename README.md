@@ -7,28 +7,33 @@ else), you edit this project and redeploy. The QR stays valid forever.
 
 ## How it works
 
-- `index.html` — the page people land on after scanning the QR. It renders a
-  list of buttons from a small `LINKS` array at the bottom of the file.
+- `index.html` — the page people land on after scanning the QR: hero,
+  photo gallery, Instagram/YouTube link buttons, and a contact section.
+- `style.css` — all styling (purple/pink/black brand palette, fonts, cards).
+- `images/` — drop your real photos here (see `images/README.md` for exact
+  filenames). Until a photo exists, that spot shows a striped placeholder.
 - `qr.html` — visit `/qr` on your deployed site to get the actual QR code
   image (generated in the browser, pointing at your site's own URL). Click
   "Download PNG" to save it for printing.
 
-## Updating the links later
+## Things you'll want to fill in
 
-Open `index.html` and edit the `LINKS` array:
+Everything below is currently a placeholder, marked with `TODO` comments in
+`index.html` — search for `TODO` to find each spot:
 
-```js
-const LINKS = [
-  { name: "YouTube", url: "https://www.youtube.com/YOUR_CHANNEL", icon: `...` },
-  { name: "Instagram", url: "https://www.instagram.com/YOUR_HANDLE", icon: `...` },
-  // add more entries here later, e.g.:
-  // { name: "Website", url: "https://example.com", icon: `<svg>...</svg>` },
-];
-```
+- **Instagram URL** — currently `https://instagram.com/coatsandstrokes`
+- **YouTube URL** — currently `https://youtube.com/@coatsandstrokes`
+- **Phone number** — currently `+1 (000) 000-0000` (the `tel:` link too)
+- **Email address** — currently `hello@coatsandstrokes.example`
+- **Photos** — see `images/README.md`
 
-Commit and push (or redeploy on Vercel) — the live page updates immediately.
-The QR code does **not** need to be regenerated or reprinted, since it only
-points at the page URL, not at any individual link.
+## Updating links/contact info later
+
+Open `index.html` and edit the relevant `href`/text directly — each spot is
+marked with a `TODO` comment. Commit and push (or redeploy on Vercel) and the
+live page updates immediately. The QR code does **not** need to be
+regenerated or reprinted, since it only points at the page URL, never at any
+individual link or detail on it.
 
 ## Deploying to Vercel
 
