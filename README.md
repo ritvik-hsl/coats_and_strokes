@@ -18,22 +18,21 @@ else), you edit this project and redeploy. The QR stays valid forever.
 
 ## Things you'll want to fill in
 
-Everything below is currently a placeholder, marked with `TODO` comments in
-`index.html` — search for `TODO` to find each spot:
-
-- **Instagram URL** — currently `https://instagram.com/coatsandstrokes`
-- **YouTube URL** — currently `https://youtube.com/@coatsandstrokes`
-- **Phone number** — currently `+1 (000) 000-0000` (the `tel:` link too)
-- **Email address** — currently `hello@coatsandstrokes.example`
+- **Instagram URL** — ✅ set to `https://instagram.com/coatsandstrokes`
+- **YouTube URL** — ✅ set to `https://www.youtube.com/@coatsandstrokes`
+- **Phone number** — still a placeholder: `+1 (000) 000-0000` (the `tel:` link too)
+- **Email address** — still a placeholder: `hello@coatsandstrokes.example`
 - **Photos** — see `images/README.md`
+
+Remaining placeholders are marked with `TODO` comments in `index.html` —
+search for `TODO` to find each spot.
 
 ## Updating links/contact info later
 
-Open `index.html` and edit the relevant `href`/text directly — each spot is
-marked with a `TODO` comment. Commit and push (or redeploy on Vercel) and the
-live page updates immediately. The QR code does **not** need to be
-regenerated or reprinted, since it only points at the page URL, never at any
-individual link or detail on it.
+Open `index.html` and edit the relevant `href`/text directly. Commit and push
+(or redeploy on Vercel) and the live page updates immediately. The QR code
+does **not** need to be regenerated or reprinted, since it only points at the
+page URL, never at any individual link or detail on it.
 
 ## Deploying to Vercel
 
